@@ -13,26 +13,21 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButton(0) && !gameOver && !gameOver && !gameOver)
         {
             if (grounded == true)
             {
-                jump();
+                Jump();
             }
-
-
-
-
         }
     }
 
-    bool grounded;
-    bool gameOver = false;
+    private bool grounded;
+    private bool gameOver;
 
-    void jump()
+    private void Jump()
     {
         grounded = false;
 
