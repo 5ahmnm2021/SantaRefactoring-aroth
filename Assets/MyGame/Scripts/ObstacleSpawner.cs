@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+    private const string MethodName = "Spawn";
     public static ObstacleSpawner instance;
 
     public GameObject[] obstacles;
@@ -22,29 +23,29 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("Spawn");
+        StartCoroutine(MethodName);
     }
 
-    IEnumerator Spawn()
+    private IEnumerator Spawn()
     {
         float waitTime = 1f;
 
-        yield return new WaitForSeconds (waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         while (!gameOver)
         {
             SpawnObstacle();
-            
-            waitTime = Random.Range(minSpawnTime,maxSpawnTime);
+
+            waitTime = Random.Range(minSpawnTime, maxSpawnTime);
 
             yield return new WaitForSeconds(waitTime);
         }
     }
 
-    void SpawnObstacle()
+    private void SpawnObstacle()
     {
-        int random = Random.Range(0,obstacles.Length);
+        int random = Random.Range(0, obstacles.Length);
 
-        Instantiate(obstacles[random],transform.position,Quaternion.identity);
+        Instantiate(obstacles[random], transform.position, Quaternion.identity);
     }
 }
