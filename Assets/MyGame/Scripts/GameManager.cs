@@ -22,11 +22,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         ObstacleSpawner.instance.gameOver = true;
-        StopScrolling();
+        GameManager.StopScrolling(this);
         gameOverPanel.SetActive(true);
     }
 
-    void StopScrolling()
+    private static void StopScrolling(GameManager instance)
     {
         TextureScroll[] scrollingObjects = FindObjectsOfType<TextureScroll>();
 
