@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     {
         TextureScroll[] scrollingObjects = FindObjectsOfType<TextureScroll>();
 
-        foreach(TextureScroll item in scrollingObjects)
+        foreach (TextureScroll item in scrollingObjects)
         {
             item.scroll = false;
             Debug.Log(item.name);
