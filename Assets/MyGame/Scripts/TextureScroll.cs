@@ -19,7 +19,6 @@ public class TextureScroll : MonoBehaviour
             Vector2 offset = new Vector2(scrollSpeed * Time.time, 0f);
 
             backgroundMaterial.mainTextureOffset = offset;
-
         }
     }
 }
