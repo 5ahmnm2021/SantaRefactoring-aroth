@@ -8,7 +8,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     public GameObject[] obstacles;
 
-    public bool gameOver = false;
+    public bool gameOver;
 
     public float minSpawnTime, maxSpawnTime;
 
